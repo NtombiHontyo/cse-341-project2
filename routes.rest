@@ -1,0 +1,77 @@
+//LOCALHOST
+### Get all products
+GET http://localhost:3000/products
+
+
+### Get product by id
+GET http://localhost:3000/products/66fe9a4dcdb543793cdb9e3b
+
+
+### Create product
+POST http://localhost:3000/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Pizza",
+    "price": "8",
+    "quantity": "2",
+    "type": "food"
+}
+
+### PUT product
+PUT http://localhost:3000/products/66fe9afdcdb543793cdb9e3d HTTP/1.1
+Content-Type: application/json
+
+{
+   "name": "iMac",
+    "price": "100",
+    "quantity": "20",
+    "type": "devices"
+}
+
+### DELETE products
+DELETE http://localhost:3000/products/66ff850fa2483ea516fba3cb HTTP/1.1
+
+
+
+// ************************************************************************************************************************************
+// ************************************************************************************************************************************
+
+
+
+//LOCALHOST
+### Get all cars
+GET http://localhost:3000/cars
+
+
+### Get car by id
+GET http://localhost:3000/cars/66ff8cd4bc6391d510c967f2
+
+
+### Create car
+POST http://localhost:3000/cars HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Volkswagen",
+    "model": "Tiguan",
+    "color": "Black",
+    "price": "$700 000.00"
+}
+
+### PUT car
+PUT http://localhost:3000/cars/66fe9e88cdb543793cdb9e40 HTTP/1.1
+Content-Type: application/json
+
+{
+   "make": "Kia",
+    "model": "Sonet",
+    "color": "White",
+    "price": "$299 000.00"
+}
+
+### DELETE car
+DELETE http://localhost:3000/cars/66ffb3ca770feda91f84885a HTTP/1.1
+
+
+
