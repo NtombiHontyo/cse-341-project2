@@ -5,13 +5,10 @@
     "description": "Products and Cars Api",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "project2-yd4m.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
-    
-    
+    "https"
   ],
   "paths": {
     "/": {
