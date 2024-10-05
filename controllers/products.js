@@ -1,12 +1,17 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async(req, res) => {
-    const result = await mongodb.getDatabase().db().collection('products').find();
+const getAll = async(req, res, next) => {
+    try {
+        const result = await mongodb.getDatabase().db().collection('products').find();
     result.toArray().then((products) => {
         res.setHeader('Content-type', 'application/json');
         res.status(200).json(products);
     });
+    } catch (err) {
+        next(err)
+    }
+    
 }
 
 const getSingle = async(req, res) => {
