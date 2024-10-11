@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { productValidationRules, validate } = require('../validation')
+const { productValidationRules, validate } = require('../validation');
+const { isAuthenticated } = require("../middleware/authenticate");
 
 const productsControllers = require('../controllers/products')
 
@@ -9,10 +10,10 @@ router.get('/', productsControllers.getAll);
 
 router.get('/:id', productsControllers.getSingle );
 
-router.post('/', productValidationRules(), validate, productsControllers.createProduct);
+router.post('/', isAuthenticated, productValidationRules(), validate, productsControllers.createProduct);
 
-router.put('/:id', productValidationRules(), validate, productsControllers.updateProduct);
+router.put('/:id', isAuthenticated, productValidationRules(), validate, productsControllers.updateProduct);
 
-router.delete('/:id', productsControllers.deleteProduct)
+router.delete('/:id', isAuthenticated,productsControllers.deleteProduct)
 
 module.exports = router;
