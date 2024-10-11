@@ -23,7 +23,10 @@ const createCar = async (req, res) => {
         make: req.body.make,
         model: req.body.model,
         color: req.body.color,
-        price: req.body.price
+        price: req.body.price,
+        Type: req.body.Type,
+        condition: req.body.condition,
+        mileage: req.body.mileage
     };
     const response  = await mongodb.getDatabase().db().collection('cars').insertOne(car);
     if (response.acknowledged) {
@@ -39,7 +42,10 @@ const updateCar = async (req, res) => {
         make: req.body.make,
         model: req.body.model,
         color: req.body.color,
-        price: req.body.price
+        price: req.body.price,
+        Type: req.body.Type,
+        condition: req.body.condition,
+        mileage: req.body.mileage
     };
     const response = await mongodb.getDatabase().db().collection('cars').replaceOne({_id: carId}, car);
     if (response.modifiedCount > 0) {
